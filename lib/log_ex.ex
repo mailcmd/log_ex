@@ -1,4 +1,4 @@
-defmodule LogEx do
+defmodule Log do
   require Logger
 
   def set_level(level) do
