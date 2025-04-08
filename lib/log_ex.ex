@@ -5,7 +5,7 @@ defmodule Log do
     Logger.configure(level: level)
   end
 
-  def log(level, text) do
-    Logger.log(level, text, (if Enum.member?([:error, :emergency], level), do: [ansi_color: :light_red], else: []))
-  end
+  def log(:error, text), do: Logger.log(:error, text, [ansi_color: :light_red])
+  def log(:emergency, text), do: Logger.log(:emergency, text, [ansi_color: :light_red])
+  def log(level, text), do: Logger.log(level, text)
 end
